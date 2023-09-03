@@ -46,17 +46,17 @@ const renewTorSession = () => {
 
 
     // // Specify a per-page proxy
-    // await useProxy(page, 'socks://127.0.0.1:9050'); // Somehow works for only HTTP and not HTTPS
+    // await useProxy(page, 'socks://127.0.0.1:9050'); // Somehow works for only HTTP requests and not HTTPS
 
     // // Specify a per-request proxy
     // await page.setRequestInterception(true);
     // page.on('request', async request => {
-    //     await useProxy(request, 'socks://127.0.0.1:9050'); // Somehow works for only HTTP and not HTTPS
+    //     await useProxy(request, 'socks://127.0.0.1:9050'); // Somehow works for only HTTP requests and not HTTPS
     // });
 
 
     // Navigate the page to target URL
-    await page.goto('http://httpbin.org/ip');
+    await page.goto('https://httpbin.org/ip');
     // Get body element
     const bodySelector = await page.waitForSelector('body');
     // Get the content of body element
